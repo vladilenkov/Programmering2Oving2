@@ -1,23 +1,27 @@
 
 public abstract class Kort
 {
-	private String fornavn, etternavn;
+	private String navn;
 	private int pinKode, kortNummer = 0;
 	private boolean sperretKort;
 	private static int antallKort = 0;
 	
-	public Kort(String fornavn, String etternavn, int pinKode, int kortNummer, boolean sperretKort)
+	public Kort(String navn, int pinKode)
 	{
 		antallKort++;
 		kortNummer = antallKort;
-		this.fornavn = fornavn;
-		this.etternavn = etternavn;
+		this.navn = navn;
 		this.pinKode = pinKode;
 		sperretKort = false;
 	}
+	public int getPin()
+	{
+		return pinKode;
+	}
+	
 	public String getNavn()
 	{
-		return fornavn + " " + etternavn;
+		return navn;
 	}
 	public boolean isSperret()
 	{
